@@ -1,0 +1,142 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all .15s ease-in-out;
+}
+
+body, html {
+  font-family: 'Roboto', sans-serif;
+  background: #fff no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+
+}
+.content{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+.title {
+  width: 100%;
+  padding-left: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-start;
+  background-color: #B8B8B8;
+
+}
+
+.abbreviation-element {
+  margin-bottom: 30px;
+  padding: 10px;
+  max-width: 500px;
+}
+
+.tooltip {
+  position: relative;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.tooltip:hover{
+  color: #989898;
+}
+
+.tooltip::before,.tooltip::after{
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+.tooltip::before{
+  content:"";
+  height:8px;
+  width:8px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  position:absolute;
+  bottom: -10px;
+  left:40%;
+  background:white;
+  border-left: 1px solid #989898;
+  border-bottom: 1px solid #989898;
+}
+
+.tooltip::after{
+  content: attr(data-tooltip);
+  background: #fff;
+  position: absolute;
+  top: 125%;
+  right: 90px;
+  width: 110px;
+  font-size: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-radius: 20px;
+  color: #000;
+  transform: translate(100px);
+  border: 1px solid #989898;
+}
+.tooltip:hover::before,.tooltip:hover::after{
+  opacity: 1;
+}
+
+.code-element {
+  background-color: #D3F0F3;
+  border-left: 2px solid #5DBCD2;
+  padding: 20px;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.blockquote-element {
+  padding: 10px;
+  max-width: 500px;
+}
+
+blockquote span{
+  font-style: italic;
+}
+
+blockquote:before {
+  color: #000;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote:after {
+  color: #000;
+  content: close-quote;
+  font-size: 1em;
+}
+
+@media(max-width:767px){
+  .title {
+    justify-content: center;
+    align-self: center;
+    padding-left: 0;
+  }
+}
+@media(max-width:400px){
+  .title {
+    font-size: 13px;
+  }
+}
